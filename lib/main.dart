@@ -14,7 +14,7 @@ void main() {
       primarySwatch: Colors.blue,
     ),
     home: DefaultTabController(
-      length: 3,
+      length: 5,
       child: TabsPage(),
       initialIndex: 1,
     ),

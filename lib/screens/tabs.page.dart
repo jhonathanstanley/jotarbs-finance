@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'despesas.resumo.dart';
 import 'home.page.dart';
+import 'config.page.dart';
+import 'contas.page.dart';
 import 'receitas.resumo.dart';
 
 /*TabsPage
@@ -20,6 +22,8 @@ class TabsPage extends StatelessWidget {
     return Scaffold(
       body: TabBarView(
         children: [
+          ConfigPage(),
+          Contas(),
           DespesasResumo(),
           HomePage(),
           ReceitasResumo(),
@@ -31,22 +35,51 @@ class TabsPage extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(bottom: 5),
               child: Text(
+                "Config",
+                style: TextStyle(fontSize: 12, color: Colors.grey),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            icon: new Icon(
+              Icons.data_usage_sharp,
+              color: Colors.grey,
+            ),
+          ),
+          Tab(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 5),
+              child: Text(
+                "Contas",
+                style: TextStyle(fontSize: 12, color: Colors.orange),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            icon: new Icon(
+              Icons.remove_circle_outline,
+              color: Colors.orange,
+            ),
+          ),
+          Tab(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 5),
+              child: Text(
                 "Despesas",
                 style: TextStyle(fontSize: 12, color: Colors.red),
                 textAlign: TextAlign.center,
               ),
             ),
-            icon: new Icon(Icons.remove_circle_outline,
+            icon: new Icon(
+              Icons.remove_circle_outline,
               color: Colors.red,
             ),
-
           ),
           Tab(
             child: Padding(
               padding: EdgeInsets.only(bottom: 5),
               child: Text(
                 "Home",
-                style: TextStyle(fontSize: 12, color: Theme.of(context).primaryColor),
+                style: TextStyle(
+                    fontSize: 12, color: Theme.of(context).primaryColor),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -56,7 +89,6 @@ class TabsPage extends StatelessWidget {
             ),
           ),
           Tab(
-
             child: Padding(
               padding: EdgeInsets.only(bottom: 5),
               child: Text(
