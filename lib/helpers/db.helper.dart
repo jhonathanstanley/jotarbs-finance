@@ -26,5 +26,8 @@ class DBHelper {
   _onCreate(Database db, int version) async {
     await db.execute(
         "CREATE TABLE Conta (id INTEGER PRIMARY KEY, descricao TEXT, saldo REAL)");
+
+    await db.execute(
+        "CREATE TABLE Movimentacao (id INTEGER PRIMARY KEY, type INTEGER, conta, INTEGER, valor REAL)");
   }
 }
