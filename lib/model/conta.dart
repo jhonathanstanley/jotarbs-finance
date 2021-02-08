@@ -3,7 +3,7 @@ class Conta {
   String descricao;
   num saldo;
 
-  Conta(this.id, this.descricao, this.saldo);
+  Conta(this.descricao, this.saldo);
 
   Map<String, dynamic> toMap() {
     var map = <String, dynamic>{

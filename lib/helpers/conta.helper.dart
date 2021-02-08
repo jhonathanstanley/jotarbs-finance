@@ -28,6 +28,6 @@ class ContaHelper {
     List<Conta> list =
         res.isNotEmpty ? res.map((c) => Conta.fromMap(c)).toList() : null;
 
-    return list;
+    return list.toList();
   }
 }
