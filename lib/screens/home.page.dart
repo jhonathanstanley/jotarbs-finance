@@ -14,42 +14,54 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: Center(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextField(
-            controller: _descricaoController,
-            decoration: InputDecoration(
-              labelText: 'Descrição',
-              labelStyle: TextStyle(
-                color: Colors.blue,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: _descricaoController,
+                decoration: InputDecoration(
+                  labelText: 'Descrição',
+                  labelStyle: TextStyle(
+                    color: Colors.blue,
+                  ),
+                ),
               ),
-            ),
+              TextField(
+                controller: _saldoController,
+                decoration: InputDecoration(
+                  labelText: 'Saldo',
+                  labelStyle: TextStyle(
+                    color: Colors.blue,
+                  ),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: FlatButton(
+                  color: Colors.blue,
+                  child: Text(
+                    'Salvar',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
+                  ),
+                  onPressed: () {
+                    addConta();
+                  },
+                ),
+              ),
+            ],
           ),
-          TextField(
-            controller: _saldoController,
-            decoration: InputDecoration(
-              labelText: 'Saldo',
-              labelStyle: TextStyle(
-                color: Colors.blue,
-              ),
-            ),
-            keyboardType: TextInputType.number,
-          ),
-          RaisedButton(
-            child: Text(
-              'Salvar',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-            onPressed: () {
-              addConta();
-            },
-          )
-        ],
-      )),
+        ),
+      ),
     );
   }
 

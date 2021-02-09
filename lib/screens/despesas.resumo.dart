@@ -9,7 +9,11 @@ class _DespesasResumoState extends State<DespesasResumo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Resumo das despesas"),
+      appBar: AppBar(
+        title: Text('Despesas'),
+      ),
+      body: Center(
+        child: Text("Resumo das despesas"),
       ),
     );
   }

@@ -16,7 +16,7 @@ void main() {
     home: DefaultTabController(
       length: 5,
       child: TabsPage(),
-      initialIndex: 1,
+      initialIndex: 0,
     ),
   ));
 }

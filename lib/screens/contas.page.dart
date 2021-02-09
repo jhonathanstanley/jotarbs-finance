@@ -35,6 +35,9 @@ class _ContasState extends State<Contas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Contas'),
+      ),
       body: Container(
         child: ListView.builder(
           itemCount: widget.items.length,
@@ -43,9 +46,30 @@ class _ContasState extends State<Contas> {
             final descricao = item.descricao;
             final saldo = item.saldo;
             return Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(5),
               child: ListTile(
-                title: Text(descricao),
-                subtitle: Text(saldo.toString()),
+                title: Text(
+                  descricao,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+                trailing: Text(
+                  'R\$ ' + saldo.toString(),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+                color: Colors.black87.withOpacity(0.3),
               ),
             );
           },

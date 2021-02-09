@@ -4,6 +4,9 @@ class ConfigPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Configurações'),
+      ),
       body: Center(
         child: ListView(
           children: <Widget>[

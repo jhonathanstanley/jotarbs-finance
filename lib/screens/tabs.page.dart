@@ -22,57 +22,15 @@ class TabsPage extends StatelessWidget {
     return Scaffold(
       body: TabBarView(
         children: [
-          ConfigPage(),
-          Contas(),
-          DespesasResumo(),
           HomePage(),
           ReceitasResumo(),
+          DespesasResumo(),
+          Contas(),
+          ConfigPage(),
         ],
       ),
       bottomNavigationBar: new TabBar(
         tabs: [
-          Tab(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 5),
-              child: Text(
-                "Config",
-                style: TextStyle(fontSize: 12, color: Colors.grey),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            icon: new Icon(
-              Icons.data_usage_sharp,
-              color: Colors.grey,
-            ),
-          ),
-          Tab(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 5),
-              child: Text(
-                "Contas",
-                style: TextStyle(fontSize: 12, color: Colors.orange),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            icon: new Icon(
-              Icons.remove_circle_outline,
-              color: Colors.orange,
-            ),
-          ),
-          Tab(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 5),
-              child: Text(
-                "Despesas",
-                style: TextStyle(fontSize: 12, color: Colors.red),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            icon: new Icon(
-              Icons.remove_circle_outline,
-              color: Colors.red,
-            ),
-          ),
           Tab(
             child: Padding(
               padding: EdgeInsets.only(bottom: 5),
@@ -100,6 +58,48 @@ class TabsPage extends StatelessWidget {
             icon: new Icon(
               Icons.add_circle_outline,
               color: Colors.green,
+            ),
+          ),
+          Tab(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 5),
+              child: Text(
+                "Despesas",
+                style: TextStyle(fontSize: 11, color: Colors.red),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            icon: new Icon(
+              Icons.remove_circle_outline,
+              color: Colors.red,
+            ),
+          ),
+          Tab(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 5),
+              child: Text(
+                "Contas",
+                style: TextStyle(fontSize: 12, color: Colors.orange),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            icon: new Icon(
+              Icons.remove_circle_outline,
+              color: Colors.orange,
+            ),
+          ),
+          Tab(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 5),
+              child: Text(
+                "Config",
+                style: TextStyle(fontSize: 12, color: Colors.grey),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            icon: new Icon(
+              Icons.data_usage_sharp,
+              color: Colors.grey,
             ),
           ),
         ],
