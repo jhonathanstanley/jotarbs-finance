@@ -34,7 +34,7 @@ class _MovimentacaoWidgetState extends State<MovimentacaoWidget> {
               ),
               DropdownButton(
                   hint: Text('Selecione a conta'),
-                  //items: list,
+                  items: [],
                   onChanged: (value) {}),
               TextFormField(
                 decoration: InputDecoration(

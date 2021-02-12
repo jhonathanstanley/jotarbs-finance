@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'contas.page.dart';
 import 'package:flutter/services.dart';
 import 'package:jotarbs_finance/helpers/conta.helper.dart';
 import 'package:jotarbs_finance/model/conta.dart';
@@ -54,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   onPressed: () {
-                    addConta();
+                    addConta(context);
                   },
                 ),
               ),
@@ -65,10 +66,49 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void addConta() {
+  void addConta(BuildContext context) {
     Conta conta =
         new Conta(_descricaoController.text, num.parse(_saldoController.text));
-    ContaHelper contaHelper = new ContaHelper();
-    contaHelper.addConta(conta);
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+              title: Text("Gravar Conta."),
+              content: Text("Tem certeza que deseja Gravar a conta?"),
+              actions: <Widget>[
+                FlatButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text("Cancelar.")),
+                FlatButton(
+                    onPressed: () async {
+                      ContaHelper contaHelper = new ContaHelper();
+                      await contaHelper.addConta(conta);
+                      Navigator.pop(context);
+                      confirmaConta(context);
+                    },
+                    child: Text("Confirmar."))
+              ]);
+        });
   }
+}
+
+void confirmaConta(BuildContext context) async {
+  showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+            title: Text("Gravar Conta."),
+            content: Text("Conta Gravada com sucesso."),
+            actions: <Widget>[
+              FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Contas()));
+                  },
+                  child: Text("Ok.")),
+            ]);
+      });
 }
